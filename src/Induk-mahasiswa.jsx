@@ -1,4 +1,7 @@
-import {Mahasiswa, Button} from "./assets/componen/Mahasiswa";
+import { useNavigate } from 'react-router-dom';
+import Button from './assets/componen/Button';
+import Layout from './assets/componen/Layout';
+import Mahasiswa from './assets/componen/Mahasiswa'
 
 // const IndukMahasiswa = () => {
 //     return ( 
@@ -12,7 +15,7 @@ import {Mahasiswa, Button} from "./assets/componen/Mahasiswa";
  
 // export default IndukMahasiswa;
 
-
+ 
 //String+number
 // const IndukMahasiswa = () => {
 //     const nama = "umam";
@@ -57,33 +60,49 @@ import {Mahasiswa, Button} from "./assets/componen/Mahasiswa";
 
 
 //Array
-// const IndukMahasiswa = () => {
-//     const lulus = {
-//         "nama" : "umam",
-//         "nim"  : "1945",
-//         "semester" : "4",
-//         "matkul" : "Desain Grafis",
-//         "absen" : true
-//     };
-//     const lulus1 = {
-//         "nama" : "asep",
-//         "nim"  : "2024",
-//         "semester" : "6",
-//         "matkul" : "Software Modeling",
-//         "absen" : true
-//     };
-//     const nim = ["1945", "2024"]
-//     const semeseter = ["4", "6"]
+const IndukMahasiswa = () => {
+    const lulus = {
+        "nama" : "umam",
+        "nim"  : "1945",
+        "semester" : "4",
+        "matkul" : "Desain Grafis",
+        "absen" : true
+    };
+    const lulus1 = {
+        "nama" : "asep",
+        "nim"  : "2024",
+        "semester" : "6",
+        "matkul" : "Software Modeling",
+        "absen" : true
+    };
+    const nim = ["1945", "2024"]
+    const semeseter = ["4", "6"]
 
-//     return ( 
-//         <div>
-//             <Mahasiswa nim={nim} semeseter={semeseter} lulus={lulus}/>
-//             <Mahasiswa nim={nim} semeseter={semeseter} lulus={lulus1}/>
-//         </div>
-//      );
-// }
+    return ( 
+        <div>
+            <Mahasiswa nim={nim} semeseter={semeseter} lulus={lulus}/>
+            <Mahasiswa nim={nim} semeseter={semeseter} lulus={lulus1}/>
+        </div>
+     );
+}
+
+const IndukMahasiswaLayout = () => {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate("/");
+    }
+
+    return ( 
+        <Layout>
+            <Button text="Kembali" onClick={handleClick} color="red" />
+            <IndukMahasiswa />
+        </Layout>
+     );
+}
  
-// export default IndukMahasiswa;
+export default IndukMahasiswaLayout;
+
 
 
 //object
@@ -109,19 +128,19 @@ import {Mahasiswa, Button} from "./assets/componen/Mahasiswa";
 
 
 //function edit
-function IndukMahasiswa() {
-    const mahasiswaData = {jurusan: 'Algoritma', kelas: 'SM 4.2'};
+// function IndukMahasiswa() {
+//     const mahasiswaData = {jurusan: 'Algoritma', kelas: 'SM 4.2'};
 
-    function heandleClick() {
-        alert('Tombol diklik!');
-    }
+//     function heandleClick() {
+//         alert('Tombol diklik!');
+//     }
 
-    return ( 
-        <div>
-            <Mahasiswa data = {mahasiswaData} />
-            <button onClick = {heandleClick}>Klik Tautan Ini</button>
-        </div>
-     );
-}
+//     return ( 
+//         <div>
+//             <Mahasiswa data = {mahasiswaData} />
+//             <button onClick = {heandleClick}>Klik Tautan Ini</button>
+//         </div>
+//      );
+// }
 
-export default IndukMahasiswa;
+// export default IndukMahasiswa;
