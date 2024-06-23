@@ -7,6 +7,7 @@ import UseEffect from "./assets/Pages/UseEffect";
 import Animasi from "./assets/Pages/Timer";
 import FetchApi from "./assets/Pages/Fetch";
 import ReactContext from "./assets/Pages/ReactContext";
+import GetMahasiswa from "./assets/componen/admin/GetMahasiswa";
 
 function App() {
   return ( 
@@ -19,6 +20,8 @@ function App() {
       <Route path="/Timer" element={<Animasi/>} />
       <Route path="/Fetch" element={<FetchApi/>} />
       <Route path="/ReactContext" element={<ReactContext/>} />
+
+      <Route path="/GetMahasiswa" element={<GetMahasiswa/>} />
     </Routes>
    );
 }
