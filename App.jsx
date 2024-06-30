@@ -8,6 +8,7 @@ import Animasi from "./assets/Pages/Timer";
 import FetchApi from "./assets/Pages/Fetch";
 import ReactContext from "./assets/Pages/ReactContext";
 import GetMahasiswa from "./assets/componen/admin/GetMahasiswa";
+import CreateMahasiswa from "./assets/componen/admin/CreateMahasiswa";
 
 function App() {
   return ( 
@@ -22,6 +23,7 @@ function App() {
       <Route path="/ReactContext" element={<ReactContext/>} />
 
       <Route path="/GetMahasiswa" element={<GetMahasiswa/>} />
+      <Route path="/create" element={<CreateMahasiswa/> } />
     </Routes>
    );
 }
